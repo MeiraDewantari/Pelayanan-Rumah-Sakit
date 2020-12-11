@@ -1,52 +1,181 @@
-# Prerequisites
-*.d
+/***
+ * Code created by RaskyYoga
+ * File :D; ON Program pelayanan rumah sakit Pada pemilihan kelas kamar serta
+ * menghitung harga penyimpanan pada data.txt
+ * :V
+*/
+#include <stdio.h>
+#include <conio.h>
+#include <io.h>
+#include <math.h>
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+int main() // di sini coba jika admin perlu memasukan Id untuk pendataan pesanan kamar Rumah sakit
+{
+char username[14]= "ardi_wirama", pass[5]= "1234";
+char usr[14], pas[5];
+int status = 0, salah = 0;
+    printf("\t\t\tSELAMAT DATANG DI SISTEM INFORMASI\n");
+    printf("\t\t\t   RUMAH SAKIT UMUM ARDI WIRAMA\n");
+    printf("\t\t\tJL.PEGANGSAAN BARAT NO.5 KOTA MALANG\n");
+    printf("\t\t\t   NOMOR TELEPON :0361 2457 8897\n");
+    printf("\t\tSENYUM ANDA HARAPAN KAMI,KESEMBUHAN ANDA TUJUAN KAMI\n");
+    printf("\t\t========================================================\n\n");
 
-# Linker output
-*.ilk
-*.map
-*.exp
+  while(status < 3){
+      printf("USERNAME : ");
+      scanf("%s", username);
+      printf("PASSWORD : ");
+      scanf("%s", pass);
+      if(strcmp(pass, "1234")==0 && strcmp (username, "ardi_wirama")==0){
+        printf("Akses Diterima\n");
+        break;
+      }else{
+      printf("Username dan Password salah\n");
+      salah++;
+      if(salah==3){
+        printf("Akses Ditolak\n");
+      }
+      }
+      status++;
+   }
+system("pause");
+//Pada Program di bawah ini adalah program pemasukkan identitas
+struct Rumah_sakit
+{
+    char nama[50];
+    char alamat[100];
+    int tggi[5], brt[5];
+    char golda[3];
+    char ayah[50];
+    char ibu[50];
+};
 
-# Precompiled Headers
-*.gch
-*.pch
+struct Rumah_sakit pasien;
+{
+    printf("\n\tSelamat Datang Dokter Ardi Wirama S.K.\n");
+    printf("\n\t========================================\n");
+    printf("\n\tMasukkan Identitas Pasien di bawah ini : \n");
+    printf("\nNama : ");
+    scanf("%s",pasien.nama);
+    printf("Alamat : ");
+    scanf("%s",pasien.alamat);
+    printf("Golongan darah : ");
+    scanf("%s",pasien.golda);
+    printf("Tinggi Badan : ");
+    scanf("%d",pasien.tggi);
+    printf("Berat badan : ");
+    scanf("%d",pasien.brt);
+    printf("\n\t========================================\n");
+    printf("\n\tMasukkan Nama Orang tua Pasien...\n");
+    printf("\nAyah : ");
+    scanf("%s",pasien.ayah);
+    printf("Ibu : ");
+    scanf("%s",pasien.ibu);
+    getch();
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+};
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+//Pada tahap ini untuk Pemesanan Kamar say..
+int kamar;
+    FILE *frs;
+    printf("\n\n");
+    printf("\t========================================\n");
+    printf("\tSekarang Anda Memasuki tahap selanjutnya..\n");
+    printf("\n\t\t>>PEMESANAN KAMAR<<\n");
+    printf("\nPililah Kelas Pemesanan kamar : \n");
+    printf("\n1. Kamar VVIP\n2. Kamar VIP\n3. General\n\n");
+    printf("Masukkan pilihan Anda : ");
+    kamar = getch();
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+int total;
+int vvip=3, vip=2, gen=1;
+int hari;
+char setuju;
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+switch (kamar)
+{
+case '1':
+    printf("\nAnda telah memilih kamar VVIP\n");
+    printf("Harga sewa kamar Rp 3.000.000,00 @hari\n");
+    printf("Apakah Anda setuju? (Y/N)\n");
+    setuju = getch();
+switch (setuju)
+{
+case 'y':
+frs = fopen("data.txt","a+");
+    printf("\nBerapa hari hari Pasien dirawat : ");
+    scanf("%d",&hari);
+    total=hari*vvip;
+    printf("\nTotal Biaya Yang Pasien Bayar : %d juta",total);
+    fprintf(frs,"\nAnda telah memilih kamar VIP\nHarga sewa kamar Rp 3.000.000,00 @hari\nselama %d hari\ndengan biaya %d juta rupiah\n",hari,total);
+fclose (frs);
+getch();
+return 0;
+break;
+
+case 'n':
+     printf("\n========================================\n");
+    printf("Anda Membatalkan Pesanan Kamar VVIP..");
+    printf("\n========================================\n");
+break;
+};
+break;
+
+case '2':
+    printf("\nAnda telah memilih kamar VIP\n");
+    printf("Harga sewa kamar Rp 2.000.000,00 @hari\n");
+    printf("Apakah Anda setuju? (Y/N)\n");
+    setuju = getch();
+switch (setuju)
+{
+case 'y':
+frs = fopen("data.txt","a+");
+    printf("\nBerapa hari hari Pasien dirawat : ");
+    scanf("%d",&hari);
+    total=hari*vip;
+    printf("\nTotal Biaya Yang Pasien Bayar : %d juta",total);
+    fprintf(frs,"\nAnda telah memilih kamar VIP\nHarga sewa kamar Rp 2.000.000,00 @hari\nselama %d hari\ndengan biaya %d juta rupiah\n",hari,total);
+fclose (frs);
+getch();
+return (0);
+break;
+
+case 'n':
+    printf("\n========================================\n");
+    printf("Anda Membatalkan Pesanan Kamar VIP..");
+    printf("\n========================================\n");
+break;
+};
+break;
+
+case '3':
+    printf("\nAnda telah memilih kamar General\n");
+    printf("Harga sewa kamar Rp 1.000.000,00 @hari\n");
+    printf("Apakah Anda setuju? (Y/N)\n");
+    setuju = getch();
+switch (setuju)
+{
+case 'y':
+frs = fopen("data.txt","a+");
+    printf("\nBerapa hari Pasien dirawat : ");
+    scanf("%d",&hari);
+    total =hari*gen;
+    printf("\nTotal Biaya Yang Pasien Bayar : %d juta",total);
+fprintf(frs,"\nAnda telah memilih kamar VIP\nHarga sewa kamar Rp 1.000.000,00 @hari\nselama %d hari\ndengan biaya %d juta rupiah\n",hari,total);
+getch();
+fclose (frs);
+return (0);
+break;
+
+case 'n':
+    printf("\n========================================\n");
+    printf("Anda Membatalkan Pesanan Kamar General..");
+    printf("\n========================================\n");
+break;
+};
+break;
+
+}getch();
+return (0);
+}
