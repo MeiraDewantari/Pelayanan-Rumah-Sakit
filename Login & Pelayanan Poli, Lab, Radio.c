@@ -17,7 +17,7 @@ queue nama;
 
 int choice, data, i, j;
 char data1[20], data3[15];
-/* Fungsi untuk membuat antrean kosong */
+
 int isEmpty()
 {
     if (antrian.rear == -1)
@@ -149,6 +149,7 @@ void check(int data)
     }
     queueArray[i] = data;
 }
+
 /* Fungsi untuk menghapus nomor antrean */
 void delete(int data)
 {
@@ -179,7 +180,8 @@ void delete(int data)
     }
     printf("\n%d tidak ditemukan di dalam antrean.\n", data);
 }
-/* Funngsi untuk menampilkan nomor antrean */
+
+/* Fungsi untuk menampilkan nomor antrean */
 void display()
 {
     if ((front == -1) && (rear == -1))
@@ -195,34 +197,35 @@ void display()
 
     front = 0;
 }
+
 void menuLogin(){
 system ("color 0b");
-char username[6] = "RSUAW", password [10] = "202834";
-char user[6], pass[10];
-char uname[12] = "pasienRSUAW", passw[5] = "1234";
-char u[12], p[5];
-int masuk, ulang, n, pilihan, adm;
-int pil, pil1, poli, umum, bpjs, a;
-n = 1;
+        char username[6] = "RSUAW", password [10] = "202834";
+        char user[6], pass[10];
+        char uname[12] = "pasienRSUAW", passw[5] = "1234";
+        char u[12], p[5];
+        int masuk, ulang, n, pilihan, adm;
+        int pil, pil1, poli, umum, bpjs, a;
+        n = 1;
 menuValidasi :
-printf ("\nMasuk sebagai?\n");
-printf ("1. Pasien\n");
-printf ("2. Admin\n");
-printf ("Pilihan Anda : ");
-scanf ("%d", &masuk);
-switch (masuk){
-case 1:
+            printf ("\nMasuk sebagai?\n");
+            printf ("1. Pasien\n");
+            printf ("2. Admin\n");
+            printf ("Pilihan Anda : ");
+            scanf ("%d", &masuk);
+            switch (masuk){
+    case 1:
 
-printf ("\nSILAKAN LOGIN DENGAN MENGGUNAKAN USERNAME DAN PASSWORD YANG SESUAI\n\n");
-while (ulang<3){
-printf ("username : "); scanf ("%s", &u);
-printf ("password : "); scanf ("%s", &p);
-if (strcmp (uname, u) == 0 && strcmp (passw, p) == 0){
-break;
-}else{
-printf ("Username/Password Anda salah!\n\n");
-ulang++;
-}
+        printf ("\nSILAKAN LOGIN DENGAN MENGGUNAKAN USERNAME DAN PASSWORD YANG SESUAI\n\n");
+        while (ulang<3){
+        printf ("username : "); scanf ("%s", &u);
+        printf ("password : "); scanf ("%s", &p);
+        if (strcmp (uname, u) == 0 && strcmp (passw, p) == 0){
+    break;
+    }else{
+        printf ("Username/Password Anda salah!\n\n");
+        ulang++;
+    }
 }system("cls");
 if (ulang<3){
     printf("\t\t\tSELAMAT DATANG DI SISTEM INFORMASI\n");
@@ -324,16 +327,16 @@ if (ulang<3){
     }break;
 case 2:
 
-printf ("\nSILAKAN LOGIN DENGAN MENGGUNAKAN USERNAME DAN PASSWORD YANG SESUAI\n\n");
-while (ulang<3){
-printf ("username : "); scanf ("%s", &user);
-printf ("password : "); scanf ("%s", &pass);
-if (strcmp (username, user) == 0 && strcmp (password, pass) == 0){
-break;
-}else{
-printf ("Username/Password Anda salah!\n\n");
-ulang++;
-}
+       printf ("\nSILAKAN LOGIN DENGAN MENGGUNAKAN USERNAME DAN PASSWORD YANG SESUAI\n\n");
+         while (ulang<3){
+            printf ("username : "); scanf ("%s", &user);
+            printf ("password : "); scanf ("%s", &pass);
+            if (strcmp (username, user) == 0 && strcmp (password, pass) == 0){
+ break;
+        }else{
+            printf ("Username/Password Anda salah!\n\n");
+            ulang++;
+        }
 }system("cls");
 if (ulang<3){
     printf("\t\t\tSELAMAT DATANG DI SISTEM INFORMASI\n");
