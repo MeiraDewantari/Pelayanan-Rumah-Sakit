@@ -40,6 +40,7 @@ int dataPasienLab(char* nama, int harga, int jalur);//dibuat oleh Widi
 int pilihanRadiologi();//dibuat oleh Widi
 int radiologi(int rad, int jalur);//dibuat oleh Widi
 int dataPasienRad(char* nama, int harga, int jalur);//dibuat oleh Widi
+
 int total;
 int vvip=3, vip=2, gen=1;
 int hari;
