@@ -166,24 +166,6 @@ void display() //oleh Meira
 
     front = 0;
 }
-
-/* ************************************************* Menu Selamat Datang ********************************************* */
-void welcome(void)
-{
-	printf("\n\n\n\n\n\t\t###########################################################\n");
-    printf("\t\t  ========================================================\n\n");
-    printf("\t\t\t    SELAMAT DATANG DI SISTEM INFORMASI\n");
-    printf("\t\t\t       RUMAH SAKIT UMUM ARDI WIRAMA\n");
-    printf("\t\t\t   JL.PEGANGSAAN BARAT NO.5 KOTA MALANG\n");
-    printf("\t\t\t      NOMOR TELEPON: 0361 2457 8897\n");
-    printf("\t\t    SENYUM ANDA HARAPAN KAMI,KESEMBUHAN ANDA TUJUAN KAMI\n\n");
-    printf("\t\t  ========================================================");
-	printf("\n\t\t############################################################");
-	printf("\n\n\n\n\n Tekan sembarang untuk melanjutkan......");
-	getch();
-	system("cls");
-
-}
 /* ************************************************* Menu Kop ********************************************* */
 void title(void)
 {
@@ -259,6 +241,24 @@ void admin(void)
             exit (1);
         }
 }
+/* ************************************************* Menu Selamat Datang ********************************************* */
+void welcome(void)
+{
+	printf("\n\n\n\n\n\t\t###########################################################\n");
+    printf("\t\t  ========================================================\n\n");
+    printf("\t\t\t    SELAMAT DATANG DI SISTEM INFORMASI\n");
+    printf("\t\t\t       RUMAH SAKIT UMUM ARDI WIRAMA\n");
+    printf("\t\t\t   JL.PEGANGSAAN BARAT NO.5 KOTA MALANG\n");
+    printf("\t\t\t      NOMOR TELEPON: 0361 2457 8897\n");
+    printf("\t\t    SENYUM ANDA HARAPAN KAMI,KESEMBUHAN ANDA TUJUAN KAMI\n\n");
+    printf("\t\t  ========================================================");
+	printf("\n\t\t############################################################");
+	printf("\n\n\n\n\n Tekan sembarang untuk melanjutkan......");
+	getch();
+	system("cls");
+
+}
+
 
 /* ************************************** Layanan RSUAW *******************************************/
 int pilihanPelayanan(void)
@@ -1522,8 +1522,7 @@ int main(void)
 
             switch(masuk)
             {
-
-            case 1:
+               case 1:
                 pasienn();
                     while(1){
                         int pil, jalur, poli, n, choice, m, lab, rad, choose;
