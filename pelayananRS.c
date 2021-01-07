@@ -4,6 +4,8 @@
 #include <string.h> //digunakan untuk fungsi strcmp(),strcpy(),strlen(),dll.
 #include <ctype.h>//digunakan untuk toupper(), tolower(),etc
 #include <windows.h>
+#include <io.h>
+#include <math.h>
 #define MAX 100
 
 //deklarasi fungsi
@@ -346,7 +348,7 @@ void rawatInap(void)
             setuju = getch();
         switch (setuju)
         {
-        case 'Y':
+        case 'y':
         frs = fopen("data.txt","a+");
             printf("\n\t\t\t\tBerapa hari hari Pasien dirawat : ");
             scanf("%d",&hari);
@@ -357,7 +359,7 @@ void rawatInap(void)
         getch();
         break;
 
-        case 'N':
+        case 'n':
             printf("\n\t\t\t\t========================================\n");
             printf("\n\t\t\t\tAnda Membatalkan Pesanan Kamar VVIP..");
             printf("\n\t\t\t\t========================================\n");
@@ -372,7 +374,7 @@ void rawatInap(void)
             setuju = getch();
         switch (setuju)
         {
-        case 'Y':
+        case 'y':
         frs = fopen("data.txt","a+");
             printf("\n\t\t\t\tBerapa hari hari Pasien dirawat : ");
             scanf("%d",&hari);
@@ -383,7 +385,7 @@ void rawatInap(void)
         getch();
         break;
 
-        case 'N':
+        case 'n':
             printf("\n\n\t\t\t\t========================================\n");
             printf("\n\t\t\t\tAnda Membatalkan Pesanan Kamar VIP..");
             printf("\n\t\t\t\t========================================\n");
@@ -398,7 +400,7 @@ void rawatInap(void)
             setuju = getch();
         switch (setuju)
         {
-        case 'Y':
+        case 'y':
         frs = fopen("data.txt","a+");
             printf("\n\t\t\t\tBerapa hari Pasien dirawat : ");
             scanf("%d",&hari);
@@ -409,7 +411,7 @@ void rawatInap(void)
         fclose (frs);
         break;
 
-        case 'N':
+        case 'n':
             printf("\n\n\t\t\t\t========================================\n");
             printf("\n\t\t\t\tAnda Membatalkan Pesanan Kamar General..");
             printf("\n\n\t\t\t\t========================================\n");
@@ -1725,7 +1727,7 @@ int main(void)
                                     pilihanJalurLayanan();
                                 }else if (rad != 1||2||3||4||5||6||7||0)
                                 {
-                                    printf("Menu tersebut Tidak Tersedia!");
+                                    printf("Menu Tidak Tersedia!");
                                     exit(1);
                                 }
                             }
@@ -1746,5 +1748,4 @@ int main(void)
                     }
             }
 	return (0);
-	
 }
