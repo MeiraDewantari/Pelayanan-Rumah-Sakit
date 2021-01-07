@@ -1725,7 +1725,7 @@ int main(void)
                                     pilihanJalurLayanan();
                                 }else if (rad != 1||2||3||4||5||6||7||0)
                                 {
-                                    printf("Menu Tidak Tersedia!");
+                                    printf("Menu tersebut Tidak Tersedia!");
                                     exit(1);
                                 }
                             }
@@ -1746,4 +1746,5 @@ int main(void)
                     }
             }
 	return (0);
+	
 }
